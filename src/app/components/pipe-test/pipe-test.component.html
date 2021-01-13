@@ -1,0 +1,22 @@
+<p appFirst="orange"
+  [class.first]="true"
+  [class.second]="false"
+  [class]="{
+    prop1: true,
+    prop2: false
+  }"
+  [style.color]="'red'"
+>The array has values: {{ values | impurePipe }} </p>
+<button appFirst (click)="handleClickAdaValuesButton()">we need more values!!</button>
+<button appFirst="red" (click)="doSomthing()">do somthing</button>
+
+<div [ngSwitch]="switch">
+  <p *ngSwitchCase="0" >0</p>
+  <p *ngSwitchCase="1">1</p>
+  <p *ngSwitchCase="2">2</p>
+  <p *ngSwitchDefault>default</p>
+</div>
+
+<p ngNonBindable>{{1+1}}</p>
+
+<p *appWorkingHours="19">working hours</p>
