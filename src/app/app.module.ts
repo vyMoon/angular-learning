@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
+import { AppFormsModule } from './modules/app-forms/app-forms.module';
 
 import { AppComponent } from './app.component';
 import { PipeTestComponent } from './components/pipe-test/pipe-test.component';
@@ -34,6 +35,7 @@ import { ChildBComponent } from './components/child-b/child-b.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AppFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

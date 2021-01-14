@@ -1,0 +1,82 @@
+<form [formGroup]="form">
+  <label for="name">
+    name:
+    <input id="name" type="text" formControlName="name">
+  </label>
+  <label for="surname">
+    surname:
+    <input id="surname" type="text" formControlName="surname">
+  </label>
+  <div formGroupName="adress">
+    <label for="state">
+      State:
+      <input id="state" type="text" formControlName="state">
+    </label>
+    <label for="city">
+      State:
+      <input id="city" type="text" formControlName="city">
+    </label>
+    <label for="street">
+      State:
+      <input id="street" type="text" formControlName="street">
+    </label>
+    <label for="zipCode">
+      State:
+      <input id="zipCode" type="text" formControlName="zipCode">
+    </label>
+  </div>
+  <div formArrayName="notes">
+    <div *ngFor="let note of notes.controls; let i = index">
+      <label>
+        note:
+        <input type="text" [formControlName]="i">
+      </label>
+      <button (click)="handleRemoveNote(i)">X</button>
+    </div>
+  </div>
+</form>
+
+<button (click)="handleClickSetDefaultValues()">set default</button>
+<button (click)="handleClickClearAdress()">clear adress</button>
+<button (click)="handleAddNote()">add note</button>
+
+<p>form Status: {{ form.status}}</p>
+
+<!-- <form [formGroup]="form">
+  <label for="name">
+    name
+    <input type="text" id="name" formControlName="name">
+  </label>
+  <label for="surname">
+    surname
+    <input type="text" id="surname" formControlName="surname">
+  </label>
+  <div formGroupName="adress">
+    <label for="state">
+      state
+      <input type="text" id="state" formControlName="state">
+    </label>
+    <label for="city">
+      city
+      <input type="text" id="city" formControlName="city">
+    </label>
+    <label for="street">
+      street
+      <input type="text" id="street" formControlName="street">
+    </label>
+    <label for="code">
+      code
+      <input type="text" id="code" formControlName="zipCode">
+    </label>
+  </div>
+  <div formGroupName="notes">
+
+    <div *ngFor="let note of notes.controls: let i = index">
+      <label>
+        note
+        <input type="text" [formControlName]="i">
+      </label>
+    </div>
+
+  </div>
+</form> -->

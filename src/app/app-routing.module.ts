@@ -8,6 +8,7 @@ import { EditComponent } from './components/edit/edit.component';
 import { ChildrenRoutesComponent } from './components/children-routes/children-routes.component';
 import { ChildAComponent } from './components/child-a/child-a.component';
 import { ChildBComponent } from './components/child-b/child-b.component';
+import { SimpleFormComponent } from './modules/app-forms/components/simple-form/simple-form.component';
 
 const routes: Routes = [
   { path: 'pipes', component: PipeTestComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
     { path: 'child-a', component: ChildAComponent },
     { path: 'child-b', component: ChildBComponent },
   ] },
+  { path: 'froms', component: SimpleFormComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: '**', component: NotFoundComponent },
 ];
