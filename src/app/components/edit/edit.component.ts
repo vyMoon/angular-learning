@@ -11,12 +11,27 @@ export class EditComponent implements OnInit {
   item: number;
 
   constructor(
-    private router: ActivatedRoute,
+    private route: ActivatedRoute,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
-    console.log(this.router)
-    this.item = +this.router.snapshot.paramMap.get('id');
+    // console.log(this.route)
+    // this.item = +this.route.snapshot.paramMap.get('id');
+    this.getItemId();
+  }
+
+  ngDoCheck() {
+    // this.item = +this.route.snapshot.paramMap.get('id');
+    this.getItemId();
+  }
+
+  private getItemId():void {
+    this.item = +this.route.snapshot.paramMap.get('id');
+  }
+
+  handleClickEditButton() {
+    this.router.navigate(['/home', {id: this.item}])
   }
 
 }
