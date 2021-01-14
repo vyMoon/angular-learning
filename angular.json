@@ -119,6 +119,12 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-learning"
+    }
+  },
+  "defaultProject": "angular-learning",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "sass"
+    }
+  }
 }
